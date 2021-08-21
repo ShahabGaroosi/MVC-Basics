@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "FeverCheck";
+}
+
+<h1>FeverCheck</h1>
+<form>
+    <label for=@temperature>Temperature:</label><br>
+    <input type="number" name=@temperature><br><br>
+    <input type="submit" value="Submit">
+
+    @if(temperature > 40)
+    {
+        <div>You have fever!</div>
+    }
+</form>
