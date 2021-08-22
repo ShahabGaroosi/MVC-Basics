@@ -16,6 +16,7 @@ namespace MVC_Basics
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSession();
             services.AddMvc();
         }
 
@@ -29,6 +30,7 @@ namespace MVC_Basics
 
             app.UseStaticFiles();
             app.UseRouting();
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
@@ -37,8 +39,8 @@ namespace MVC_Basics
                     pattern: "{controller=Home}/{action=Index}/{id?}"
                     );
                 endpoints.MapControllerRoute(
-                    name: "curstomRoute",
-                    pattern: "/FeverCheck",
+                    name: "customRoute",
+                    pattern: "/custom",
                     defaults: new { controller = "Doctor", action = "FeverCheck"}
                     );
             });
