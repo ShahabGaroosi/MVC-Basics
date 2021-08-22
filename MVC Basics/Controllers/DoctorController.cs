@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MVC_Basics.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +13,9 @@ namespace MVC_Basics.Controllers
         {
             return View();
         }
-        public IActionResult FeverCheck()
+        public IActionResult FeverCheck(double temperature)
         {
-            float temperature;
+            ViewBag.Msg = Doctor.feverCheck(temperature);
             return View();
         }
     }
