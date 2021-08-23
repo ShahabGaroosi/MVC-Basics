@@ -10,15 +10,23 @@ namespace MVC_Basics.Controllers
 {
     public class GuessingGameController : Controller
     {
+        Random rnd = new Random();
+
+        [HttpGet]
         public IActionResult Index()
         {
-            Random rnd = new Random();
             HttpContext.Session.SetInt32("number", rnd.Next(1, 100));
             return View();
         }
-        public IActionResult Index2(int guess)
+
+        [HttpPost]
+        public IActionResult Index(int guess)
         {
             ViewBag.Msg = GuessingGame.checkGuess((int)HttpContext.Session.GetInt32("number"), guess);
+            if (guess == (int)HttpContext.Session.GetInt32("number"))
+            {
+                HttpContext.Session.SetInt32("number", rnd.Next(1, 100));
+            }
             return View();
         }
     }

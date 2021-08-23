@@ -12,13 +12,13 @@ namespace MVC_Basics.Models
         {
             if (number > guess)
             {
-                return $"Too low guess: {guess}";
+                return $"Too low guess: {guess}.";
             }
             else if (number < guess)
             {
-                return $"Too high guess: {guess}";
+                return $"Too high guess: {guess}.";
             }
-            return $"Congratulation! Right guess: {guess}";
+            return $"Congratulation! Right guess: {guess}!";
         }
         
     }

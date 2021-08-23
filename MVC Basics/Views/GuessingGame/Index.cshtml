@@ -1,12 +1,15 @@
-﻿@using Microsoft.AspNetCore.Http;
-
+﻿
 @{
     ViewData["Title"] = "GuessingGame";
 }
 
-<h1>GuessingGame</h1>
-<form action="/GuessingGame/Index2">
-    <label for="guess">Guess number (between 1 and 100):</label><br>
+<h1>Guessing Game</h1>
+<form asp-controller="GuessingGame" asp-action="Index" method="post">
+    <label for="guess">Guess number (1 - 100):</label><br>
     <input type="number" name="guess"><br><br>
     <input type="submit" value="Submit">
 </form>
+@if (ViewBag.Msg != null)
+{
+    <div>@ViewBag.Msg</div>
+}
