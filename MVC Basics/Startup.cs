@@ -40,8 +40,8 @@ namespace MVC_Basics
                     );
                 endpoints.MapControllerRoute(
                     name: "Doctor",
-                    pattern: "/Doctor",
-                    defaults: new { controller = "Doctor", action = "FeverCheck"}
+                    pattern: "/FeverCheck",
+                    defaults: new { controller = "Doctor", action = "Index"}
                     );
                 endpoints.MapControllerRoute(
                     name: "GuessingGame",

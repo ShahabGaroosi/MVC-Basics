@@ -9,12 +9,11 @@ namespace MVC_Basics.Models
     {
         public static string feverCheck(double temperature)
         {
-            string feverCheck = "";
             if (temperature > 40)
             {
-                feverCheck = "You have fever!";
+                return "You have fever!";
             }
-            return feverCheck;
+            return null;
         }
     }
 }

@@ -4,8 +4,13 @@
 }
 
 <h1>Doctor</h1>
-<form action="/Doctor/FeverCheck">
+<form method="post">
     <label for="temperature">Temperature:</label><br>
     <input type="number" name="temperature"><br><br>
     <input type="submit" value="Submit">
 </form>
+<br>
+@if (ViewBag.Msg != null)
+{
+    <div>@ViewBag.Msg</div>
+}
