@@ -6,12 +6,15 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    @Html.ActionLink("Home", "Index", "Home")
-    @Html.ActionLink("About", "About", "Home")
-    @Html.ActionLink("Contact", "Contact", "Home")
-    @Html.ActionLink("Projects", "Projects", "Home")
-    @Html.ActionLink("Doctor", "Index", "Doctor")
-    @Html.ActionLink("GuessingGame", "Index", "GuessingGame")
+    <header>
+        <h1>MVC Basics</h1>
+        @Html.ActionLink("Home", "Index", "Home")
+        @Html.ActionLink("About", "About", "Home")
+        @Html.ActionLink("Contact", "Contact", "Home")
+        @Html.ActionLink("Projects", "Projects", "Home")
+        @Html.ActionLink("Doctor", "Index", "Doctor")
+        @Html.ActionLink("GuessingGame", "Index", "GuessingGame")
+    </header>
     <div>
         @RenderBody()
     </div>
